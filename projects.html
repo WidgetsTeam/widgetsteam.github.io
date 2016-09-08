@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>WidgetsTeam - Projekty</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+	<div class="main-container">
+	<nav>
+		<div id="navbar">
+			<a href="index.html"><img class="logo" src="logo_wt.svg" alt="Logo"></a>
+			<button id="menu-button"><img class="menu-button-icon" src="menu_icon.svg" alt="Menu button"></button>
+		</div>
+		<ul id="menu">
+			<li>
+				<a href="index.html">Strona główna</a>
+			</li>
+			<li>
+				<a href="about.html">O nas</a>
+			</li>
+			<li style="background-color: black;">
+				<a href = "projects.html" style="color: white;">Projekty</a>
+			</li>
+			<li>
+				<a href="contact.html">Kontakt</a>
+			</li>
+		</ul>
+	</nav>
+	<main>
+		<h1>Projekty</h1>
+		<article>
+			<p>Projekty.</p>
+		</article>
+	</main>
+	</div>
+	<footer>
+		&copy; 2016 WidgetsTeam
+	</footer>
+	<script>
+		var menu = document.getElementById("menu");
+		var navbar = document.getElementById("navbar");
+		var mobile_menu_visible = false;
+
+		window.onresize = function()
+		{
+			if (window.innerWidth > 1000)
+			{
+				menu.style.display = "block";
+				navbar.style.borderBottom = "";
+			}
+			else
+			{
+				if (!mobile_menu_visible)
+				{
+					menu.style.display = "none";
+				}
+				else
+					navbar.style.borderBottom = "1px solid black";
+			}
+		}
+
+		var button = document.getElementById("menu-button");
+		button.onclick = function()
+		{
+			if (mobile_menu_visible)
+			{
+				menu.style.display = "none";
+				mobile_menu_visible = false;
+				navbar.style.borderBottom = "";
+			}
+			else
+			{
+				menu.style.display = "block";
+				mobile_menu_visible = true;
+				navbar.style.borderBottom = "1px solid black";
+			}
+		}
+	</script>
+</body>
+</html>
